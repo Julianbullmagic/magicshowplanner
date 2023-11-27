@@ -9,13 +9,13 @@
 </head>
 <body>
   <div style="margin:3vw">
-  <h1>Kids Show</h1>
+  <h3>Kids Show</h3>
   <div id="kidsshow"></div>
   <br/><hr/><br/><br/>
-  <h1>General Big Show</h1>
+  <h3>General Big Show</h3>
   <div id="generalsmallshow"></div>
   <br/><hr/><br/><br/>
-  <h1>General Small Show</h1>
+  <h3>General Small Show</h3>
   <div id="generalbigshow"></div>
   <h4>Do whole cutlery routine with sporks and everything!</h3>
   <h3>Do whole pencils and paper crane, appearing drawing, disappearing pencils etc with sporks and everything!</h3>
@@ -82,7 +82,7 @@
   function populateshowlist(showname,showlist){
     let showelement=document.getElementById(showname)
     for (let item of showlist){
-      let node = document.createElement("h3");
+      let node = document.createElement("h5");
       let textnode = document.createTextNode(item);
       node.appendChild(textnode);
       showelement.appendChild(node);
