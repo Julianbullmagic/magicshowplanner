@@ -8,6 +8,84 @@
   <link rel="icon" href="favicon.png">
 </head>
 <body>
-  <h1>Hello, world!</h1>
+  <div style="margin:3vw">
+  <h1>Kids Show</h1>
+  <div id="kidsshow"></div>
+  <br/><hr/><br/><br/>
+  <h1>General Big Show</h1>
+  <div id="generalsmallshow"></div>
+  <br/><hr/><br/><br/>
+  <h1>General Small Show</h1>
+  <div id="generalbigshow"></div>
+  <h4>Do whole cutlery routine with sporks and everything!</h3>
+  <h3>Do whole pencils and paper crane, appearing drawing, disappearing pencils etc with sporks and everything!</h3>
+  <h4>Thing spinning on finger, key scissors, umbrellas through head, coin in bottle, lie detector</h4>
+</div>
+  <script>
+  let kidsshowtricks=["balloon dog","appear many balloons and dog","sponge","misers dream","mirror box with bottles and straws do with sponge"]
+  kidsshowtricks=kidsshowtricks.sort(() => Math.random() - 0.5);
+  kidsshowtricks=kidsshowtricks.sort(() => Math.random() - 0.5);
+  let pocketconcealmentthing=["cutlery routine","pencil and paper routine"]
+  pocketconcealmentthing=pocketconcealmentthing.sort(() => Math.random() - 0.5);
+  pocketconcealmentthing=pocketconcealmentthing.sort(() => Math.random() - 0.5);
+  let mindreadingjokes=["babies","earth","say any card","no idea","number one to twelve clock"]
+  mindreadingjokes=mindreadingjokes.sort(() => Math.random() - 0.5);
+  mindreadingjokes=mindreadingjokes.sort(() => Math.random() - 0.5);
+  let cardfoldtricks=["4 cards from mouth","card to pocket with signature","torn and restored card"]
+  cardfoldtricks=cardfoldtricks.sort(() => Math.random() - 0.5);
+  cardfoldtricks=cardfoldtricks.sort(() => Math.random() - 0.5);
+  let generaltricks=["rubix cube","memorize deck 5 perfect faros","have spectator remember sequence of colours then have spectator shuffle",
+  "card from box in pocket","stack tricks","thai food","cutlery","burst balloon and balloon with cards inside",
+  "arm chopper","carrot chopping","envelopes","spectator cuts to the four sixes","spectator shuffles stack game","triumph","they say flip 4 times","balls from mouth",
+  "toilet paper and prune juice thing","deodorant from armpit","spectators take the only red and black cards","cards from box"
+  "spell spectators name","need a cute kid to help with this","need a handsome man to help with this","forcefully force card","force 666",
+  "spectator cuts 10 cards",'beam deal stuff with aces',"stab toungue","big sheet small coin","make a grain of dirt appear","make ball vanish by getting small",
+  "slide change","open change","force named cards","any card at any number","only red and only blue thing","oil and water with whole deck","have a few spectators
+  choose cards and have them say card names in their head over and over like ....","wild card","balance stuff with loops","stick ping pong ball on nose"]
+  generaltricks=generaltricks.sort(() => Math.random() - 0.5);
+  generaltricks=generaltricks.sort(() => Math.random() - 0.5);
+  let closeupstuff=["matrix","coins through rubber stuff","rubber band stuff","think a card stuff","three person think a card read tone of voice",
+  "cards under box or in box","cards fall out of box","ring thing","rubber bands","card warp","torn and restored card warp","one ahead stack trick 4 predictions",
+]
+  closeupstuff=closeupstuff.sort(() => Math.random() - 0.5);
+  closeupstuff=closeupstuff.sort(() => Math.random() - 0.5);
+  let deckswitchstuff=["marked deck thing","memorise deck","four of a kind deck","emerge triumphant deck in order","poker deal, the hand that seemed best turned out to be the worst, such is life."]
+  deckswitchstuff=deckswitchstuff.sort(() => Math.random() - 0.5);
+  deckswitchstuff=deckswitchstuff.sort(() => Math.random() - 0.5);
+  let ropetricks=["walking knot, professors nightmare, ropethroughbody","twisting spare ropes","tenyo rope","kellar rope escape","thumb ties"]
+  ropetricks=ropetricks.sort(() => Math.random() - 0.5);
+  ropetricks=ropetricks.sort(() => Math.random() - 0.5);
+  let finales=["cups and balls","card productions","rope through body"]
+  finales=finales.sort(() => Math.random() - 0.5);
+  finales=finales.sort(() => Math.random() - 0.5);
+  let kidsshow=[...kidsshowtricks.slice(0,Math.ceil(kidsshowtricks.length/2)),pocketconcealmentthing[0],
+  ...mindreadingjokes.slice(0,Math.ceil(mindreadingjokes.length/2)),cardfoldtricks[0],
+  ...generaltricks.slice(0,Math.ceil(generaltricks.length/2)),...ropetricks.slice(0,Math.ceil(ropetricks.length/2))]
+  kidsshow=kidsshow.sort(() => Math.random() - 0.5);
+  kidsshow.push(finales[0])
+  let generalsmallshow=[pocketconcealmentthing[0],
+  ...mindreadingjokes.slice(0,Math.ceil(mindreadingjokes.length/2)),cardfoldtricks[0]...closeuptricks.slice(0,Math.ceil(closeuptricks.length/2)),
+  ...generaltricks.slice(0,Math.ceil(generaltricks.length/2)),...ropetricks.slice(0,Math.ceil(ropetricks.length/2))]
+  generalsmallshow=generalsmallshow.sort(() => Math.random() - 0.5);
+  generalsmallshow.push(finales[0])
+  let generallargeshow=[pocketconcealmentthing[0],
+  ...mindreadingjokes.slice(0,Math.ceil(mindreadingjokes.length/2)),cardfoldtricks[0],
+  ...generaltricks.slice(0,Math.ceil(generaltricks.length/2)),...ropetricks.slice(0,Math.ceil(ropetricks.length/2))]
+  generallargeshow=generallargeshow.sort(() => Math.random() - 0.5);
+  generallargeshow.push(finales[0])
+  populateshowlist("kidsshow",kidsshow)
+  populateshowlist("generalsmallshow",generalsmallshow)
+  populateshowlist("generalbigshow",generallargeshow)
+
+  function populateshowlist(showname,showlist){
+    let showelement=document.getElementById(showname)
+    for (let item of showlist){
+      let node = document.createElement("h3");
+      let textnode = document.createTextNode(item);
+      node.appendChild(textnode);
+      showelement.appendChild(node);
+    }
+  }
+  </script>
 </body>
 </html>
