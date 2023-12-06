@@ -20,6 +20,7 @@
   <br/><hr/><br/><br/>
   <h3>Street Show</h3>
   <div id="streetshow"></div>
+  <br/><hr/><br/><br/>
   <h3>Alltricks</h3>
   <div id="alltricks"></div>
   <h4>Do whole cutlery routine with sporks and everything!</h3>
@@ -104,8 +105,8 @@ double bounce ball, double spoon bend spoon bending routine, eyeball vase, not a
     let showelement=document.getElementById(showname)
     for (let item of showlist){
       let node = document.createElement("h6");
-      node.display="inline"
-      let textnode = document.createTextNode(`${item}`, );
+      node.style.display="inline"
+      let textnode = document.createTextNode(`${item}, `);
       node.appendChild(textnode);
       showelement.appendChild(node);
     }
