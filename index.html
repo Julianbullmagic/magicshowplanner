@@ -17,9 +17,19 @@
   <br/><hr/><br/><br/>
   <h3>General Small Show</h3>
   <div id="generalbigshow"></div>
+  <br/><hr/><br/><br/>
+  <h3>Street Show</h3>
+  <div id="streetshow"></div>
+  <h3>Alltricks</h3>
+  <div id="alltricks"></div>
   <h4>Do whole cutlery routine with sporks and everything!</h3>
   <h3>Do whole pencils and paper crane, appearing drawing, disappearing pencils etc with sporks and everything!</h3>
-  <h4>Thing spinning on finger, key scissors, umbrellas through head, coin in bottle, lie detector</h4>
+  <h4>Thing spinning on finger, key scissors, umbrellas through head, coin in bottle, lie detector, nest of boxes, knife through metal
+  bunnies magic, sponge ball routine with sponges turning inside out and rice bowls, mug someone for money trick, umbrellas through head, dice routine,
+spin things on finger gregory wilson, cookie routine, cheese or chocolate from mouth, blozzard all cards white, carrot restoration,
+small card trick, once I killed a sixpack, cutting tens thing, mirror coins, beer beard, bill malone coins across hypnotize hand shutup, shuffle bread,
+double bounce ball, double spoon bend spoon bending routine, eyeball vase, not a great card trick but it makes you think, makes you think it isn't a great card trick,
+52 pickup force</h4>
 </div>
   <script>
   let kidsshowtricks=["balloon dog","appear many balloons and dog","sponge","misers dream","mirror box with bottles and straws do with sponge"]
@@ -34,9 +44,10 @@
   let cardfoldtricks=["4 cards from mouth","card to pocket with signature","torn and restored card"]
   cardfoldtricks=cardfoldtricks.sort(() => Math.random() - 0.5);
   cardfoldtricks=cardfoldtricks.sort(() => Math.random() - 0.5);
-  let generaltricks=["rubix cube","memorize deck 5 perfect faros","have spectator remember sequence of colours then have spectator shuffle",
+  let mouthtricks=["balls from mouth","cheese and chocolate from mouth","balloon dog thing","cookies routine","cards from mouth"]
+  let generaltricks=["instant coffee","rubix cube","memorize deck 5 perfect faros","have spectator remember sequence of colours then have spectator shuffle",
   "card from box in pocket","stack tricks","thai food","cutlery","burst balloon and balloon with cards inside",
-  "arm chopper","carrot chopping","envelopes","spectator cuts to the four sixes","spectator shuffles stack game","triumph","they say flip 4 times","balls from mouth",
+  "carrot chopping","envelopes","spectator cuts to the four sixes","spectator shuffles stack game","triumph","they say flip 4 times","balls from mouth",
   "toilet paper and prune juice thing","deodorant from armpit","spectators take the only red and black cards","cards from box",
   "spell spectators name","need a cute kid to help with this","need a handsome man to help with this","forcefully force card","force 666",
   "spectator cuts 10 cards",'beam deal stuff with aces',"stab toungue","big sheet small coin","make a grain of dirt appear","make ball vanish by getting small",
@@ -57,9 +68,10 @@
   let ropetricks=["walking knot, professors nightmare, ropethroughbody","twisting spare ropes","tenyo rope","kellar rope escape","thumb ties"]
   ropetricks=ropetricks.sort(() => Math.random() - 0.5);
   ropetricks=ropetricks.sort(() => Math.random() - 0.5);
-  let finales=["cups and balls","card productions","rope through body"]
+  let finales=["cups and balls","card productions"]
   finales=finales.sort(() => Math.random() - 0.5);
   finales=finales.sort(() => Math.random() - 0.5);
+  let alltricks=[...kidsshowtricks,...pocketconcealmentthing,...mindreadingjokes,...cardfoldtricks,...mouthtricks,...generaltricks,...closeupstuff,...deckswitchstuff,...ropetricks,...finales]
   let kidsshow=[...kidsshowtricks.slice(0,Math.ceil(kidsshowtricks.length/2)),pocketconcealmentthing[0],
   ...mindreadingjokes.slice(0,Math.ceil(mindreadingjokes.length/2)),cardfoldtricks[0],
   ...generaltricks.slice(0,Math.ceil(generaltricks.length/2)),...ropetricks.slice(0,Math.ceil(ropetricks.length/2))]
@@ -78,12 +90,22 @@
   populateshowlist("kidsshow",kidsshow)
   populateshowlist("generalsmallshow",generalsmallshow)
   populateshowlist("generalbigshow",generallargeshow)
-
+  populatealltrickslist("alltricks",alltricks)
   function populateshowlist(showname,showlist){
     let showelement=document.getElementById(showname)
     for (let item of showlist){
       let node = document.createElement("h5");
       let textnode = document.createTextNode(item);
+      node.appendChild(textnode);
+      showelement.appendChild(node);
+    }
+  }
+  function populatealltrickslist(showname,showlist){
+    let showelement=document.getElementById(showname)
+    for (let item of showlist){
+      let node = document.createElement("h6");
+      node.display="inline"
+      let textnode = document.createTextNode(`${item}`, );
       node.appendChild(textnode);
       showelement.appendChild(node);
     }
